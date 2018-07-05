@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,25 +30,47 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
-    public void openNumbersList(View view) {
-        Intent intent = new Intent(this, NumbersActivity.class);
-        startActivity(intent);
-    }
 
-    public void openColorsList(View view) {
-        Intent intent = new Intent(this, ColorsActivity.class);
-        startActivity(intent);
-    }
+        TextView tvNumbers = findViewById(R.id.numbers);
+        tvNumbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "YUPII NUMBERS", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    public void openFamilyList(View view) {
-        Intent intent = new Intent(this, FamilyActivity.class);
-        startActivity(intent);
-    }
+        TextView tvFamily = findViewById(R.id.family);
+        tvFamily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "YUPII FAMILY", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    public void openPhrasesList(View view) {
-        Intent intent = new Intent(this, PhrasesActivity.class);
-        startActivity(intent);
+        TextView tvColors = findViewById(R.id.colors);
+        tvColors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "YUPII COLORS", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        TextView tvPhrases = findViewById(R.id.phrases);
+        tvPhrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "YUPII PHRASES", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
