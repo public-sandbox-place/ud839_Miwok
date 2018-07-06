@@ -15,7 +15,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<String> words = new ArrayList<>();
 
         words.add("one");
         words.add("two");
@@ -32,12 +32,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         LinearLayout numberList = findViewById(R.id.numbers_list);
 
-        int index = 0;
-        while (index < words.size()) {
+        for (int index = 0; index < words.size(); index++) {
             TextView wordView = new TextView(this);
             wordView.setText(words.get(index));
             numberList.addView(wordView);
-            index++;
         }
+
     }
 }
