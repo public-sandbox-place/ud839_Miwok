@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,10 +30,20 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("eight");
         words.add("nine");
         words.add("ten");
+        words.add("one1");
+        words.add("two1");
+        words.add("three1");
+        words.add("four1");
+        words.add("five1");
+        words.add("six1");
+        words.add("seven1");
+        words.add("eight1");
+        words.add("nine1");
+        words.add("ten1");
 
         Log.v("Main Activity", words.toString());
 
-        ListView listView = findViewById(R.id.numbers_list);
+        GridView gridView = findViewById(R.id.numbers_list);
 
 /*
         Not optimal approach for the long list!!!
@@ -47,6 +58,6 @@ public class NumbersActivity extends AppCompatActivity {
                 this, android.R.layout.simple_list_item_1, words
         );
 
-        listView.setAdapter(itemsAdapter);
+        gridView.setAdapter(itemsAdapter);
     }
 }
