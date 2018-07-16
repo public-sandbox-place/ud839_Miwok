@@ -18,32 +18,26 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> words = new ArrayList<>();
+        ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add("one");
-        words.add("two");
-        words.add("three");
-        words.add("four");
-        words.add("five");
-        words.add("six");
-        words.add("seven");
-        words.add("eight");
-        words.add("nine");
-        words.add("ten");
-        words.add("one1");
-        words.add("two1");
-        words.add("three1");
-        words.add("four1");
-        words.add("five1");
-        words.add("six1");
-        words.add("seven1");
-        words.add("eight1");
-        words.add("nine1");
-        words.add("ten1");
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two"));
 
-        Log.v("Main Activity", words.toString());
 
-        GridView gridView = findViewById(R.id.numbers_list);
+        //Log.v("Main Activity", words.toString());
+
+        ListView listView = findViewById(R.id.numbers_list);
 
 /*
         Not optimal approach for the long list!!!
@@ -54,10 +48,10 @@ public class NumbersActivity extends AppCompatActivity {
             numberList.addView(wordView);
         }
 */
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, words
+        WordAdapter itemsAdapter = new WordAdapter(
+                this, words
         );
 
-        gridView.setAdapter(itemsAdapter);
+        listView.setAdapter(itemsAdapter);
     }
 }
