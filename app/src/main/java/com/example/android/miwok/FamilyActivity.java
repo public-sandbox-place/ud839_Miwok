@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,10 +16,10 @@ public class FamilyActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("one1", "two"));
-        words.add(new Word("one", "two1"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
+        words.add(new Word("fone1", "two"));
+        words.add(new Word("fone", "two1"));
+        words.add(new Word("fone", "two"));
+        words.add(new Word("fone", "two"));
         words.add(new Word("one", "two"));
         words.add(new Word("one", "two"));
         words.add(new Word("one", "two"));
@@ -30,7 +31,7 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("one", "two"));
 
 
-        //Log.v("Main Activity", words.toString());
+        Log.v("Main Activity", words.toString());
 
         ListView listView = findViewById(R.id.family_list);
 
@@ -44,7 +45,7 @@ public class FamilyActivity extends AppCompatActivity {
         }
 */
         WordAdapter itemsAdapter = new WordAdapter(
-                this, words
+                this, words, R.color.category_family
         );
 
         listView.setAdapter(itemsAdapter);

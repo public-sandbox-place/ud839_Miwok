@@ -20,19 +20,19 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
-        words.add(new Word("one", "two"));
+        words.add(new Word("one", "two", R.drawable.number_one));
+        words.add(new Word("one", "two", R.drawable.number_two));
+        words.add(new Word("one", "two", R.drawable.number_three));
+        words.add(new Word("one", "two", R.drawable.number_four));
+        words.add(new Word("one", "two", R.drawable.number_five));
+        words.add(new Word("one", "two", R.drawable.number_six));
+        words.add(new Word("one", "two", R.drawable.number_seven));
+        words.add(new Word("one", "two", R.drawable.number_eight));
+        words.add(new Word("one", "two", R.drawable.number_nine));
+        words.add(new Word("one", "two", R.drawable.number_ten));
+        words.add(new Word("one", "two", R.drawable.number_two));
+        words.add(new Word("one", "two", R.drawable.number_two));
+
 
 
         //Log.v("Main Activity", words.toString());
@@ -49,7 +49,7 @@ public class NumbersActivity extends AppCompatActivity {
         }
 */
         WordAdapter itemsAdapter = new WordAdapter(
-                this, words
+                this, words, R.color.category_numbers
         );
 
         listView.setAdapter(itemsAdapter);

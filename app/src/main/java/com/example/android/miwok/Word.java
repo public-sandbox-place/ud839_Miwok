@@ -1,12 +1,23 @@
 package com.example.android.miwok;
 
+import android.media.Image;
+
 public class Word {
     private String mName1;
     private String mName2;
+    private int mImageId = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     Word(String name1, String name2) {
         mName1 = name1;
         mName2 = name2;
+    }
+
+    Word(String name1, String name2, int imgId) {
+        mName1 = name1;
+        mName2 = name2;
+        mImageId = imgId;
     }
 
     public String getName1() {
@@ -15,5 +26,13 @@ public class Word {
 
     public String getName2() {
         return mName2;
+    }
+
+    public int getImageId() {
+        return mImageId;
+    }
+
+    public boolean hasImage() {
+        return mImageId != NO_IMAGE_PROVIDED;
     }
 }
