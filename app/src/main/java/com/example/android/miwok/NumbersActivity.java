@@ -50,10 +50,14 @@ public class NumbersActivity extends AppCompatActivity {
             public void onItemClick(AdapterView adapterView, View view, int position, long id) {
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, words.get(position).getSong());
                 mMediaPlayer.start();
-                Toast.makeText(NumbersActivity.this, "Clicked item " + position
 
-
-                        , Toast.LENGTH_SHORT).show();
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        Toast.makeText(NumbersActivity.this, "I FINISHED", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                Toast.makeText(NumbersActivity.this, words.get(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

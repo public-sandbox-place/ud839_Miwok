@@ -55,4 +55,14 @@ public class Word {
     public int getSong() {
         return mSong;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mName1='" + mName1 + '\'' +
+                ", mName2='" + mName2 + '\'' +
+                ", mImageId=" + mImageId +
+                ", mSong=" + mSong +
+                '}';
+    }
 }
