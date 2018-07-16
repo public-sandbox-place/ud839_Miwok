@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -8,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView name1;
         TextView name2;
         ImageView img;
+        ImageView imgPlay;
     }
 
     WordAdapter(@NonNull Context context, @NonNull ArrayList<Word> objects, int color) {
@@ -43,6 +47,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             viewHolder.name1 = (TextView) listItemView.findViewById(R.id.list_item_name);
             viewHolder.name2 = (TextView) listItemView.findViewById(R.id.list_item_sub_name);
             viewHolder.img = (ImageView) listItemView.findViewById(R.id.image);
+            viewHolder.imgPlay = (ImageView) listItemView.findViewById(R.id.img_play);
             listItemView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) listItemView.getTag();
@@ -59,6 +64,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
             viewHolder.img.setVisibility(View.GONE);
         }
 
+        if (currentWord.hasSong()) {
+            viewHolder.imgPlay.setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.imgPlay.setVisibility(View.INVISIBLE);
+        }
+
 
         // Set the theme color for the list item
         View textContainer = listItemView.findViewById(R.id.text_container);
@@ -66,7 +77,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         int color = ContextCompat.getColor(getContext(), mColor);
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
-
 
         return listItemView;
     }
